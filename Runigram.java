@@ -48,7 +48,7 @@ public class Runigram {
 	}
 
 	// Prints the RGB values of a given color.
-	public static void printColor(Color c) {
+	private static void printColor(Color c) {
 
 		System.out.print("(");
 		System.out.printf("%3s,", c.getRed()); // Prints the red component
@@ -63,7 +63,7 @@ public class Runigram {
 	// For example, to check that some image processing function works correctly,
 	// we can apply the function and then use this function to print the resulting
 	// image.
-	public static void print(Color[][] image) {
+	private static void print(Color[][] image) {
 		for (int i = 0; i < image.length; i++) {
 			for (int j = 0; j < image[0].length; j++) {
 				printColor(image[i][j]);
@@ -169,9 +169,9 @@ public class Runigram {
 		int G2 = c2.getGreen();
 		int B2 = c2.getBlue();
 
-		int R = (int) Math.round(alpha * R1 + (1 - alpha) * R2);
-		int G = (int) Math.round(alpha * G1 + (1 - alpha) * G2);
-		int B = (int) Math.round(alpha * B1 + (1 - alpha) * B2);
+		int R = (int) (alpha * R1 + (1 - alpha) * R2);
+		int G = (int) (alpha * G1 + (1 - alpha) * G2);
+		int B = (int) (alpha * B1 + (1 - alpha) * B2);
 
 		Color c = new Color(R, G, B);
 		return c;
