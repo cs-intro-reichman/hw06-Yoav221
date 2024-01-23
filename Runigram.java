@@ -19,7 +19,7 @@ public class Runigram {
 		Color[][] imageOut;
 
 		// Tests the horizontal flipping of an image:
-		imageOut = flippedHorizontally(tinypic);
+		imageOut = flippedVertically(tinypic);
 		System.out.println();
 		print(imageOut);
 
@@ -100,8 +100,15 @@ public class Runigram {
 	 * Returns an image which is the vertically flipped version of the given image.
 	 */
 	public static Color[][] flippedVertically(Color[][] image) {
-		//// Replace the following statement with your code
-		return null;
+		int rows = image.length;
+		int cols = image[0].length;
+		Color[][] flipImage = new Color[rows][cols];
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				flipImage[i][j] = image[rows - 1 - i][j];
+			}
+		}
+		return flipImage;
 	}
 
 	// Computes the luminance of the RGB values of the given pixel, using the
