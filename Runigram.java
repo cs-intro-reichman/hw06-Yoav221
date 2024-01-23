@@ -214,16 +214,15 @@ public class Runigram {
 
 		if (height != target.length || width != target[0].length) {
 			target = scaled(target, width, height);
-		} else {
+		}
 
-			Color[][] blendImage = new Color[height][width];
+		Color[][] blendImage = new Color[height][width];
 
-			for (int i = 0; i <= n; i++) {
-				int alpha = (n - i) / n;
-				blendImage = blend(source, target, alpha);
-				display(blendImage);
-				StdDraw.pause(500);
-			}
+		for (int i = 0; i <= n; i++) {
+			int alpha = (n - i) / n;
+			blendImage = blend(source, target, alpha);
+			display(blendImage);
+			StdDraw.pause(500);
 		}
 	}
 
