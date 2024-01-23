@@ -85,8 +85,15 @@ public class Runigram {
 	 * image.
 	 */
 	public static Color[][] flippedHorizontally(Color[][] image) {
-		//// Replace the following statement with your code
-		return null;
+		int rows = image.length;
+		int cols = image[0].length;
+		Color[][] flipImage = new Color[rows][cols];
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				flipImage[i][j] = image[i][cols - 1 - j];
+			}
+		}
+		return flipImage;
 	}
 
 	/**
